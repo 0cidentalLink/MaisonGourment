@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Gourment | Bolos, Doces Gourmet e Sobremesas na Cidade Ocidental - GO</title>
+  <meta name="description" content="Maison Gourment oferece bolos personalizados, doces gourmet, tradicionais e sobremesas deliciosas na Cidade Ocidental, Goiás. Encomende já!">
+  <meta name="keywords" content=" Maison Gourment Cidade Ocidental, bolos personalizados, doces gourmet, doces tradicionais, sobremesas, Maison Gourment , confeitaria em cidade ocidental">
+  <meta name="author" content="ocidentalink">
+  <meta property="og:title" content=" Maison Gourment  - Bolos e Doces em Cidade Ocidental">
+  <meta property="og:description" content="Bolos, doces e sobremesas feitos com carinho em Cidade Ocidental. Confeitaria Maison Gourment , qualidade e sabor em cada pedaço.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+    
+    <nav id="menu" class="hidden">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="Galeria.html">Galeria</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <img src="maison%20gournet.jpg" alt="maison gournet">
+    <p>Maison Gourmet — Amor em cada receita 💕</p>
+  </section>
+
+  <!--beneficios-->
+  <section class="beneficios">
+    <h2>Maison Gourmet</h2>
+      <p>Na Maison Gourmet, cada doce é uma declaração de amor. Somos mais que uma loja — somos um ateliê de emoções, onde sabores ganham vida e memórias são criadas a cada mordida. Nossos bolos personalizados, doces modelados e sobremesas artesanais são preparados com ingredientes selecionados e um toque generoso de carinho. Atendemos Brasília e entorno levando encanto, beleza e sabor para os seus momentos mais especiais. De aniversários a celebrações íntimas, criamos experiências que derretem o coração.
+
+</p>
+  
+ 
+  </section>
+    <!--Carousel-container-->
+    <div class="caixa-carousel">
+<section class="carousel-container">
+    <ul class="carousel">
+       <li><a href="#"><img src="banner03.png" alt="imagem"></a></li>
+       <li><a href="#"><img src="banner02.png" alt="imagem"></a></li>
+       <li><a href="#"><img src="banner01.png" alt="imagem"></a></li>
+       <li><a href="#"><img src="nanner01.png" alt="imagem"></a></li>
+       <li><a href="#"><img src="nanner02.png" alt="imagem"></a></li>
+       <li><a href="#"><img src="nanner03.png" alt="imagem"></a></li>
+      
+     
+  
+      
+
+      
+    
+    
+    </ul>
+
+    <div class="buttons">
+      <button id="prev">&#10094;</button>
+      <button id="next">&#10095;</button>
+    </div>
+
+    <div class="indicators" id="indicators"></div>
+  </section>
+      </div>  
+     <!--galeria-->
+  <div class="galeria-btn">
+    <a href="Galeria.html">
+      Galeria
+    </a>
+  </div>
+  
+ 
+  <!--whatsapp-->
+  <div class="whatsapp-btn">
+    <a href="https://wa.me/5561993246499" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="icon-whats">
+      Fale conosco no WhatsApp
+    </a>
+  </div>
+
+  <footer>
+   <p>&copy; 2025 Maison Gourment. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script-->
+  <script>
+       const carousel = document.querySelector('.carousel');
+    const indicatorsContainer = document.getElementById('indicators');
+    const slides = document.querySelectorAll('.carousel li');
+    const totalSlides = slides.length;
+    let currentIndex = 0;
+
+    // Criar indicadores
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('span');
+      dot.classList.add('indicator');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(i));
+      indicatorsContainer.appendChild(dot);
+    }
+
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+      document.querySelectorAll('.indicator').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+    }
+
+    document.getElementById('prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    });
+      
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menu toggle
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav");
+      toggle.addEventListener("click", function () {
+        nav.classList.toggle("hidden");
+      });
+
+      // Galeria com lightbox funcional
+      const imagens = [
+        "Imagem%20do%20WhatsApp%20de%202025-05-08%20%C3%A0(s)%2023.25.01_1c98636f.jpg",
+        "Imagem%20do%20WhatsApp%20de%202025-05-08%20%C3%A0(s)%2023.25.01_b6fc4a2e.jpg",
+        "Imagem%20do%20WhatsApp%20de%202025-05-08%20%C3%A0(s)%2023.25.21_6f599130.jpg"
+      ];
+
+      let imagemAtual = 0;
+      const lightbox = document.getElementById('lightbox-carousel');
+      const imagemAmpliada = document.getElementById('imagem-ampliada');
+
+      window.abrirGaleria = function(index) {
+        imagemAtual = index;
+        imagemAmpliada.src = imagens[imagemAtual];
+        lightbox.style.display = 'flex';
+      };
+
+      window.mudarImagem = function(direcao) {
+        imagemAtual = (imagemAtual + direcao + imagens.length) % imagens.length;
+        imagemAmpliada.src = imagens[imagemAtual];
+      };
+
+      window.fecharGaleria = function() {
+        lightbox.style.display = 'none';
+      };
+    });
+  </script>
+</body>
+</html>

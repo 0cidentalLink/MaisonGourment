@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Gourment | Bolos, Doces Gourmet e Sobremesas na Cidade Ocidental - GO</title>
+  <meta name="description" content="Maison Gourment oferece bolos personalizados, doces gourmet, tradicionais e sobremesas deliciosas na Cidade Ocidental, Goiás. Encomende já!">
+  <meta name="keywords" content=" Maison Gourment Cidade Ocidental, bolos personalizados, doces gourmet, doces tradicionais, sobremesas, Maison Gourment , confeitaria em cidade ocidental">
+  <meta name="author" content="ocidentalink">
+  <meta property="og:title" content=" Maison Gourment  - Bolos e Doces em Cidade Ocidental">
+  <meta property="og:description" content="Bolos, doces e sobremesas feitos com carinho em Cidade Ocidental. Confeitaria Maison Gourment , qualidade e sabor em cada pedaço.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+    
+    <nav id="menu" class="hidden">
+      <ul>
+         <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="Galeria.html">Galeria</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <img src="maison%20gournet.jpg" alt="maison gournet">
+    <p>Maison Gourmet — Amor em cada receita 💕</p>
+  </section>
+
+
+    
+  <!--galeria-->
+  <section class="galeria">
+    <h2>Nossa Galeria de Delícias</h2>
+    <div class="galeria-grid">
+      <img src="Maison-Gourmet%20(1).jpg" alt="maison gournet" onclick="abrirGaleria(1)">
+      <img src="Maison-Gourmet%20(2).jpg" alt="maison gournet" onclick="abrirGaleria(2)">
+      <img src="Maison-Gourmet%20(3).jpg" alt="maison gournet" onclick="abrirGaleria(3)">
+      <img src="Maison-Gourmet%20(4).jpg" alt="maison gournet" onclick="abrirGaleria(4)">
+      <img src="Maison-Gourmet%20(5).jpg" alt="maison gournet" onclick="abrirGaleria(5)">
+      <img src="Maison-Gourmet%20(6).jpg" alt="maison gournet" onclick="abrirGaleria(6)">
+      <img src="Maison-Gourmet%20(7).jpg" alt="maison gournet" onclick="abrirGaleria(7)">
+      <img src="Maison-Gourmet%20(8).jpg" alt="maison gournet" onclick="abrirGaleria(8)">
+      <img src="Maison-Gourmet%20(9).jpg" alt="maison gournet" onclick="abrirGaleria(9)">
+      <img src="Maison-Gourmet%20(10).jpg" alt="maison gournet" onclick="abrirGaleria(10)">
+      <img src="Maison-Gourmet%20(11).jpg" alt="maison gournet" onclick="abrirGaleria(11)">
+      <img src="Maison-Gourmet%20(12).jpg" alt="maison gournet" onclick="abrirGaleria(12)">
+      <img src="Maison-Gourmet%20(13).jpg" alt="maison gournet" onclick="abrirGaleria(13)">
+      <img src="Maison-Gourmet%20(14).jpg" alt="maison gournet" onclick="abrirGaleria(14)">
+      <img src="Maison-Gourmet%20(15).jpg" alt="maison gournet" onclick="abrirGaleria(15)">
+      <img src="Maison-Gourmet%20(16).jpg" alt="maison gournet" onclick="abrirGaleria(16)">
+      <img src="Maison-Gourmet%20(17).jpg" alt="maison gournet" onclick="abrirGaleria(14)">
+      <img src="Maison-Gourmet%20(18).jpg" alt="maison gournet" onclick="abrirGaleria(18)">
+  
+     
+    </div>
+  </section>
+
+  <!-- Galeria Modal -->
+  <div class="lightbox-carousel" id="lightbox-carousel" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 9999; flex-direction: column;">
+    <span class="close-btn" onclick="fecharGaleria()" style="position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer;">×</span>
+    <button class="nav-btn prev" onclick="mudarImagem(-1)" style="position: absolute; left: 20px; font-size: 40px; background: none; border: none; color: white; cursor: pointer;">&#10094;</button>
+    <img id="imagem-ampliada" src="" alt="Imagem ampliada" style="max-width: 90%; max-height: 80vh; border-radius: 10px;">
+    <button class="nav-btn next" onclick="mudarImagem(1)" style="position: absolute; right: 20px; font-size: 40px; background: none; border: none; color: white; cursor: pointer;">&#10095;</button>
+  </div>
+
+  <!--whatsapp-->
+  <div class="whatsapp-btn">
+    <a href="https://wa.me/5561993246499" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="icon-whats">
+      Fale conosco no WhatsApp
+    </a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Maison Gourment. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script corrigido -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menu toggle
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav");
+      toggle.addEventListener("click", function () {
+        nav.classList.toggle("hidden");
+      });
+
+      // Galeria com lightbox funcional
+      const imagens = [
+        "Maison-Gourmet%20(1).jpg",
+        "Maison-Gourmet%20(2).jpg",
+        "Maison-Gourmet%20(3).jpg",
+        "Maison-Gourmet%20(4).jpg",
+        "Maison-Gourmet%20(5).jpg",
+        "Maison-Gourmet%20(6).jpg",
+        "Maison-Gourmet%20(7).jpg",
+        "Maison-Gourmet%20(8).jpg",
+        "Maison-Gourmet%20(9).jpg",
+        "Maison-Gourmet%20(10).jpg",
+        "Maison-Gourmet%20(11).jpg",
+        "Maison-Gourmet%20(12).jpg",
+        "Maison-Gourmet%20(13).jpg",
+        "Maison-Gourmet%20(14).jpg",
+        "Maison-Gourmet%20(15).jpg",
+        "Maison-Gourmet%20(16).jpg",
+        "Maison-Gourmet%20(17).jpg",
+        "Maison-Gourmet%20(18).jpg",
+       
+      ];
+
+      let imagemAtual = 0;
+      const lightbox = document.getElementById('lightbox-carousel');
+      const imagemAmpliada = document.getElementById('imagem-ampliada');
+
+      window.abrirGaleria = function(index) {
+        imagemAtual = index;
+        imagemAmpliada.src = imagens[imagemAtual];
+        lightbox.style.display = 'flex';
+      };
+
+      window.mudarImagem = function(direcao) {
+        imagemAtual = (imagemAtual + direcao + imagens.length) % imagens.length;
+        imagemAmpliada.src = imagens[imagemAtual];
+      };
+
+      window.fecharGaleria = function() {
+        lightbox.style.display = 'none';
+      };
+    });
+  </script>
+</body>
+</html>

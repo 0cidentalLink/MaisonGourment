@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Gourment | Bolos, Doces Gourmet e Sobremesas na Cidade Ocidental - GO</title>
+  <meta name="description" content="Maison Gourment oferece bolos personalizados, doces gourmet, tradicionais e sobremesas deliciosas na Cidade Ocidental, Goiás. Encomende já!">
+  <meta name="keywords" content=" Maison Gourment Cidade Ocidental, bolos personalizados, doces gourmet, doces tradicionais, sobremesas, Maison Gourment , confeitaria em cidade ocidental">
+  <meta name="author" content="ocidentalink">
+  <meta property="og:title" content=" Maison Gourment  - Bolos e Doces em Cidade Ocidental">
+  <meta property="og:description" content="Bolos, doces e sobremesas feitos com carinho em Cidade Ocidental. Confeitaria Maison Gourment , qualidade e sabor em cada pedaço.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+    
+    <nav id="menu" class="hidden">
+      <ul>
+         <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="Galeria.html">Galeria</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="banner">
+     
+    <img src="maison%20gournet.jpg" alt="banner">
+    <p>Maison Gourmet — Amor em cada receita 💕</p>
+  </section>
+ <!--beneficios-->
+  <section class="sobre">
+    <h2>Sobre Maison Gourment</h2>
+<p>A Maison Gourmet é mais do que uma loja de doces — é um ateliê de sabores que transforma momentos simples em memórias inesquecíveis. Especializada em bolos personalizados, doces modelados, doces gourmet, doces tradicionais e sobremesas variadas, nossa missão é encantar cada cliente com carinho, beleza e sabor.</p>
+      
+      <p>Cada criação é feita artesanalmente, com ingredientes de alta qualidade e um toque de amor que se sente na primeira mordida. Seja para aniversários, casamentos, eventos especiais ou um mimo no dia a dia, nossos doces são pensados para surpreender e emocionar.</p>
+      
+      <p>📍 Atendemos Brasília e todo o entorno, levando doçura onde você estiver. Encomende agora e experimente a combinação perfeita entre estética e sabor que só a Maison Gourmet oferece.</p>
+  </section>
+    
+    
+    <!--whatsapp-->
+   <div class="whatsapp-btn">
+  <a href="https://wa.me/5561993246499" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" class="icon-whats">
+    Fale conosco no WhatsApp
+  </a>
+</div>
+ 
+
+  <footer>
+    <p>&copy; 2025 Maison Gourment. Todos os direitos reservados.</p>
+  </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // MENU
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav");
+    toggle.addEventListener("click", function () {
+      nav.classList.toggle("hidden");
+    });
+
+    // CARROSSEL (verifica se existe primeiro)
+    const carousel = document.querySelector('.carousel');
+    const indicatorsContainer = document.getElementById('indicators');
+    const slides = document.querySelectorAll('.carousel li');
+    const totalSlides = slides.length;
+    let currentIndex = 0;
+
+    if (carousel && indicatorsContainer && slides.length > 0) {
+      // Criar indicadores
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('indicator');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        indicatorsContainer.appendChild(dot);
+      }
+
+      function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        document.querySelectorAll('.indicator').forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentIndex);
+        });
+      }
+
+      function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+      }
+
+      document.getElementById('prev')?.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      });
+
+      document.getElementById('next')?.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      });
+    }
+  });
+</script>
+
+      
+
+</body>
+</html>
